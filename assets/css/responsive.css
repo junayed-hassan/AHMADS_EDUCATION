@@ -1,0 +1,103 @@
+/* # Let's open the provided CSS file and modify it to include the responsive media queries.
+css_file_path = '/mnt/data/style.css'
+
+# Reading the original CSS file
+with open(css_file_path, 'r') as file:
+    original_css = file.read()
+
+# Adding responsive media queries
+responsive_css = original_css + """ */
+
+/* Responsive design */
+
+/* Mobile phones (up to 480px) */
+@media only screen and (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .menu .list ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .common-btn, #book-btn, #viewimg {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .online-courses .card-container, 
+    .our-books .book-container {
+        grid-template-columns: 1fr;
+    }
+
+    .statistics {
+        flex-direction: column;
+    }
+
+    .photo-gallery .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tablets (up to 768px) */
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .menu .list ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .online-courses .card-container, 
+    .our-books .book-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .photo-gallery .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .statistics {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+/* Laptops and small desktops (up to 1024px) */
+@media only screen and (max-width: 1024px) {
+    .container {
+        width: 90%;
+        padding: 0 30px;
+    }
+
+    .online-courses .card-container, 
+    .our-books .book-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .statistics {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* Larger desktops (up to 1200px) */
+@media only screen and (max-width: 1200px) {
+    .container {
+        width: 95%;
+    }
+}
+
+/* """
+
+# Saving the modified CSS file
+responsive_css_file_path = '/mnt/data/responsive_style.css'
+with open(responsive_css_file_path, 'w') as file:
+    file.write(responsive_css)
+
+responsive_css_file_path */
